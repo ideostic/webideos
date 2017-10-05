@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Country(models.Model):
+    numeric_code = models.UUIDField(primary_key=True, editable=False) #models.CharField(max_length=3)
+    alpha_2_code = models.CharField(max_length=2)
+    alpha_3_code = models.CharField(max_length=3)
+    eng = models.CharField(max_length=44)
+    spa = models.CharField(max_length=44)
+
+    class Meta:
+        db_table = 'iso_3166_1'
+
+
 class User(models.Model):
     user_identify_number = models.UUIDField(default=0, primary_key=True, editable=True)  # Clave primaria
     user_name = models.CharField(max_length=200)
@@ -13,17 +24,6 @@ class User(models.Model):
 
     class Meta:
         db_table = 'user'
-
-
-class Country(models.Model):
-    numeric_code = models.UUIDField(primary_key=True, editable=False) #models.CharField(max_length=3)
-    alpha_2_code = models.CharField(max_length=2)
-    alpha_3_code = models.CharField(max_length=3)
-    eng = models.CharField(max_length=44)
-    spa = models.CharField(max_length=44)
-
-    class Meta:
-        db_table = 'iso_3166_1'
 
 
 class StudyType(models.Model):
@@ -49,7 +49,7 @@ class StudyHistory(models.Model):
     date_from = models.DateTimeField('Fecha de inicio')
     date_to = models.DateTimeField('Fecha fin')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    degree = models.ForeignKey(StudyType, on_delete=models.CASCADE)
+    degree = models.ForeignKey(Degree, on_delete=models.CASCADE)
     studyType = models.ForeignKey(StudyType, on_delete=models.CASCADE)
 
     class Meta:
@@ -75,8 +75,8 @@ class PhoneCountryCode(models.Model):
     name = models.CharField(max_length=80, null=False)
     nicename = models.CharField(max_length=80, null=False)
     iso3 = models.CharField(max_length=3, null=False)
-    numcode = models.SmallIntegerField(max_length=6, null=False)
-    phonecode = models.IntegerField(max_length=5, null=False)
+    numcode = models.SmallIntegerField(null=False)
+    phonecode = models.IntegerField(null=False)
 
     class Meta:
         db_table = 'telefono_cod_pais'
@@ -92,7 +92,7 @@ class PhoneType(models.Model):
 
 
 class PhoneNumber(models.Model):
-    number = models.IntegerField(max_length=10, null=True)
+    number = models.IntegerField(null=True)
     phoneCountryCode = models.ForeignKey(PhoneCountryCode, on_delete=models.CASCADE)
     phoneType = models.ForeignKey(PhoneType, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
