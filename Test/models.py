@@ -22,6 +22,9 @@ class User(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE)  # id del pais de origen
     user_email = models.EmailField(null=False)
 
+    def __str__(self):
+        return self.user_name + self.user_lastName
+
     class Meta:
         db_table = 'user'
 
