@@ -120,4 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#ESTE SE UTILIZA PARA CUANDO SE DESEAN UTILIZAR MAS DE UN DIRECTORIA PARA LOS ARCHIVOS ESTATICOS.
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
