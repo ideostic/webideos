@@ -1,19 +1,27 @@
 from django.db import models
+import locale
 
 
 class Country(models.Model):
-    numeric_code = models.UUIDField(primary_key=True, editable=False) #models.CharField(max_length=3)
+    numeric_code = models.CharField(max_length=3, primary_key=True, editable=False) #models.CharField(max_length=3)
     alpha_2_code = models.CharField(max_length=2)
     alpha_3_code = models.CharField(max_length=3)
-    eng = models.CharField(max_length=44)
-    spa = models.CharField(max_length=44)
+    eng = models.CharField(max_length=44, default='temp')
+    spa = models.CharField(max_length=44, default='temp')
+
+    def __str__(self):
+        leng = locale.getdefaultlocale()[0][:2]
+        if leng == 'es':
+            return self.spa
+        else:
+            return self.eng
 
     class Meta:
         db_table = 'iso_3166_1'
 
 
 class User(models.Model):
-    user_identify_number = models.UUIDField(default=0, primary_key=True, editable=True)  # Clave primaria
+    user_identify_number = models.CharField(primary_key=True,max_length=50, default=0, editable=True)  # Clave primaria
     user_name = models.CharField(max_length=200)
     user_lastName = models.CharField(max_length=200)
     user_born_date = models.DateTimeField('BirthDay Date')
@@ -23,7 +31,7 @@ class User(models.Model):
     user_email = models.EmailField(null=False)
 
     def __str__(self):
-        return self.user_name + self.user_lastName
+        return self.user_name + ' ' + self.user_lastName
 
     class Meta:
         db_table = 'user'
