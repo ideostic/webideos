@@ -14,20 +14,40 @@
 
 {% include "Test/plantillas/nav-bar_user.html" %}
 
-<div class="container">
-    <div class="jumbotron">
+<script src="{% static "web/bootstrap/popper.min.js"%}" ></script>
 
-        <h1>Jumbotron</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
-            content or information.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+
+{#<div class="container">#}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Bienvenid@ a IDEOS</h1>
+        <p>Un lugar para la formacion y el desarrollo de ideas, emprendimiento y mucho mas...</p>
+        <p><a class="btn btn-primary btn-lg">Iniciar »</a></p>
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2><u>Portal Educativo</u></h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <a class="btn btn-default" href="#" role="button">View details »</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Titulo 2</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <a class="btn btn-default" href="#" role="button">View details »</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Titulo 3</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <a class="btn btn-default" href="#" role="button">View details »</a>
+        </div>
+    </div>
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{% static "web/bootstrap/popper.min.js"%}" ></script>
 <script src="{% static "web/jquery-3.2.1.min.js"%}" ></script>
 <script src="{% static "web/bootstrap/js/bootstrap.min.js"%}" ></script>
 </body>
