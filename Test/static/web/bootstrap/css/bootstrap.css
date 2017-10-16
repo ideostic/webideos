@@ -4,7 +4,7 @@
  * Homepage: http://bootswatch.com
  * Copyright 2012-2017 Thomas Park
  * Licensed under MIT
- * Tema: Spacelab
+ * Tema: Spacelab  https://bootswatch.com/spacelab/
  * Based on Bootstrap
 */
 /*!
@@ -4334,6 +4334,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-bottom: 10px;
   line-height: 20px;
 }
+.marquee-rog {
+  padding-bottom: 10px;
+  line-height: 20px;
+}
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
@@ -4366,6 +4370,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+    .navbar-nav > li > marquee {
     padding-top: 15px;
     padding-bottom: 15px;
   }
