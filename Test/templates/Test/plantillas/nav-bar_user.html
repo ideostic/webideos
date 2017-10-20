@@ -57,7 +57,9 @@
 
 {#Barra con valores de cryptomonedas#}
 {#<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
-{% if True %}
-                <marquee class="marquee-rog">>>Informacion de las cryptomonedas aquí<<</marquee>
+{% if False %}
+    {% if CryptoCoins %}
+        <marquee class="marquee-rog" id="test" onMouseOver="document.all.test.stop()" onMouseOut="document.all.test.start()">{% autoescape off %} {{ CryptoCoins }} {% endautoescape %} </marquee>
+    {% endif %}
 {% endif %}
 {#</div>#}

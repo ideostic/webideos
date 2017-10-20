@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from Test.services import CryptoGetter
 
 
 def index(request):
-    return render(request, 'Test/index.html')
+    CryptoGetter.generateInfoLabel()
+    context = {
+        'CryptoCoins': CryptoGetter.generateInfoLabel(),
+    }
+    return render(request, 'Test/index.html', context)
