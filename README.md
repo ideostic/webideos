@@ -1,6 +1,5 @@
 # IDEOS
-
-<<Imagen de IDEOS aqui>>
+--Imagen de IDEOS aqui--
 
 
 Este repositorio aloja la aplicacion que alberga al proyecto IDEOS, Este proyecto consta principalmente en 2 partes:
