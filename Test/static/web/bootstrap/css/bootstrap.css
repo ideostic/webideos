@@ -4976,6 +4976,12 @@ a.badge:focus {
   color: inherit;
   background-color: #eeeeee;
 }
+
+.jumbotron-banner {
+  background: #000 url("../../images/banner.png") center center;
+  color: #eedada
+}
+
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
